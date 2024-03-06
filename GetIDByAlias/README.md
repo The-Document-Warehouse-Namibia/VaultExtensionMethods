@@ -21,7 +21,7 @@ output = Vault.ExtensionMethodOperations.ExecuteVaultExtensionMethod("[VaultExte
 
 ## Implementation Guide
 
-For detailed implementation guidance and examples, please refer to the M-Files Developer Portal.
+For detailed implementation guidance and examples, please refer to the [M-Files Developer Portal](https://developer.m-files.com/Built-In/VBScript/Vault-Extension-Methods/).
 
 ## Exception Handling
 
@@ -54,7 +54,6 @@ Err.Raise MFScriptCancel, "Object Type ID: " & ObjTypeID & vbCrLf & _
 
 Private Function GetIDByAlias(alias, method)
 	' Vault extension method requires a ";" delimiter to separate the alias and method name.
-	GetIDByAlias = Vault.ExtensionMethodOperations.ExecuteVaultExtensionMethod("TDW.VaultExtensionMethod.GetIDByAlias", _
-			 alias & ";" & method)
+	GetIDByAlias = Vault.ExtensionMethodOperations.ExecuteVaultExtensionMethod("TDW.VaultExtensionMethod.GetIDByAlias", alias & ";" & method)
 End Function
 ```
