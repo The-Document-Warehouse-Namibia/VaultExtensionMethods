@@ -4,6 +4,8 @@ Const DELIMITER = ";"
 
 Const MF_OBJECT_TYPE = "GetObjectTypeIDByAlias"
 Const MF_CLASS = "GetClassIDByAlias"
+Const MF_WORKFLOW = "GetWorkflowIDByAlias"
+Const MF_WORKFLOW_STATE = "GetWorkflowStateIDByAlias"
 Const MF_PROPERTYDEF = "GetPropertyDefIDByAlias"
 
 Public SplitStrings
@@ -43,6 +45,30 @@ Private Function GetClassIDByAlias(classAlias)
   End If
 
   GetClassIDByAlias = classID
+End Function
+
+' Get workflow id by alias helper.
+Private Function GetWorkflowIDByAlias(workflowAlias)
+  Dim workflowId
+  workflowId = Vault.WorkflowOperations.GetWorkflowIDByAlias(workflowAlias)
+
+  If (workflowId = -1) Then
+    ThrowCustomException NotFoundException("Workflow", workflowAlias)
+  End If
+
+  GetWorkflowIDByAlias = workflowId
+End Function
+
+' Get workflow state id by alias helper.
+Private Function GetWorkflowStateIDByAlias(workflowStateAlias)
+    Dim workflowStateId
+    workflowStateId = Vault.WorkflowOperations.GetWorkflowStateIDByAlias(workflowStateAlias)
+
+    If (workflowStateId = -1) Then
+      ThrowCustomException NotFoundException("Workflow Satate", workflowStateAlias)
+    End If
+
+    GetWorkflowStateIDByAlias = workflowStateId
 End Function
 
 ' Get property def id by alias helper.
