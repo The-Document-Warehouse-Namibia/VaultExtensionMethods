@@ -1,6 +1,6 @@
 # M-Files Vault Extension Method
 
-This repository contains a custom M-Files Vault extension method that allows you to retrieve IDs by alias for object types, classes, and property definitions.
+This repository contains a custom M-Files Vault extension method that allows you to retrieve IDs by alias for object types, classes, wofklows, workflow states and property definitions.
 
 ## Overview
 
@@ -8,6 +8,8 @@ The extension method is designed to parse input strings containing a delimiter (
 
 - GetObjectTypeIDByAlias: Retrieves the object type ID by alias.
 - GetClassIDByAlias: Retrieves the class ID by alias.
+- GetWorkflowIDByAlias: Retrieves the workflow ID by alias.
+- GetWorkflowStateIDByAlias: Retrieves the workflow state ID by alias.
 - GetPropertyDefIDByAlias: Retrieves the property definition ID by alias.
 
 ## Usage
