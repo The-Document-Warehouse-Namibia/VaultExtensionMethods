@@ -54,7 +54,7 @@ Err.Raise MFScriptCancel, "Object Type ID: " & ObjTypeID & vbCrLf & _
 
 ''' HELPER FUNCTIONS
 
-Private Function GetIDByAlias(alias, method)
+Private Function GetIDByAlias(method, alias)
 	' Vault extension method requires a ";" delimiter to separate the alias and method name.
 	GetIDByAlias = Vault.ExtensionMethodOperations.ExecuteVaultExtensionMethod("TDW.VaultExtensionMethod.GetIDByAlias", method & ";" & alias)
 End Function
