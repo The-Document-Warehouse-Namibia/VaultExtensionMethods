@@ -18,7 +18,7 @@ Prior to utilizing this method, ensure that you implement it in a Vault Extensio
 
 ```vbscript
 Dim output
-output = Vault.ExtensionMethodOperations.ExecuteVaultExtensionMethod("[VaultExtensionMethodName]", "[Alias]" & ";" & "[MethodName]")
+output = Vault.ExtensionMethodOperations.ExecuteVaultExtensionMethod("[VaultExtensionMethodName]", "[MethodName]" & ";" & "[Alias]")
 ```
 
 ## Implementation Guide
@@ -56,6 +56,6 @@ Err.Raise MFScriptCancel, "Object Type ID: " & ObjTypeID & vbCrLf & _
 
 Private Function GetIDByAlias(alias, method)
 	' Vault extension method requires a ";" delimiter to separate the alias and method name.
-	GetIDByAlias = Vault.ExtensionMethodOperations.ExecuteVaultExtensionMethod("TDW.VaultExtensionMethod.GetIDByAlias", alias & ";" & method)
+	GetIDByAlias = Vault.ExtensionMethodOperations.ExecuteVaultExtensionMethod("TDW.VaultExtensionMethod.GetIDByAlias", method & ";" & alias)
 End Function
 ```
